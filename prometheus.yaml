@@ -34,5 +34,5 @@ scrape_configs:
   - job_name: "alertoSPA"
     metrics_path: "/v1/alerts"
     scheme: "https"
-    bearer_token_file: 
+    bearer_token_file: tokenSPA.txt
 
