@@ -48,22 +48,22 @@ class AppMetrics:
         self.polling_interval_seconds = polling_interval_seconds
 
         #metrics to collect (ATL)
-        self.description_ATL = Gauge("description", "Alert description (ATL)")
-        self.time_ATL = Gauge("time", "What time the alert was generated (ATL)")
-        self.affected_vpg_ATL = Gauge("affected_vpg", "Which VPG is impacted (ATL)")
-        self.site_name_ATL = Gauge("site_name", "Which site is impacted (ATL)")
+        self.description_ATL = Gauge("descriptionATL", "Alert description (ATL)")
+        self.time_ATL = Gauge("timeATL", "What time the alert was generated (ATL)")
+        self.affected_vpg_ATL = Gauge("affected_vpgATL", "Which VPG is impacted (ATL)")
+        self.site_name_ATL = Gauge("site_nameATL", "Which site is impacted (ATL)")
 
         #metrics to collect (LAS)
-        self.description_LAS = Gauge("description", "Alert description (LAS)")
-        self.time_LAS = Gauge("time", "What time the alert was generated (LAS)")
-        self.affected_vpg_LAS = Gauge("affected_vpg", "Which VPG is impacted (LAS)")
-        self.site_name_LAS = Gauge("site_name", "Which site is impacted (LAS)")
+        self.description_LAS = Gauge("descriptionLAS", "Alert description (LAS)")
+        self.time_LAS = Gauge("timeLAS", "What time the alert was generated (LAS)")
+        self.affected_vpg_LAS = Gauge("affected_vpgLAS", "Which VPG is impacted (LAS)")
+        self.site_name_LAS = Gauge("site_nameLAS", "Which site is impacted (LAS)")
 
         #metrics to collect (SPA)
-        self.description_SPA = Gauge("description", "Alert description (SPA)")
-        self.time_SPA = Gauge("time", "What time the alert was generated (SPA)")
-        self.affected_vpg_SPA = Gauge("affected_vpg", "Which VPG is impacted (SPA)")
-        self.site_name_SPA = Gauge("site_name", "Which site is impacted (SPA)")
+        self.description_SPA = Gauge("descriptionSPA", "Alert description (SPA)")
+        self.time_SPA = Gauge("timeSPA", "What time the alert was generated (SPA)")
+        self.affected_vpg_SPA = Gauge("affected_vpgSPA", "Which VPG is impacted (SPA)")
+        self.site_name_SPA = Gauge("site_nameSPA", "Which site is impacted (SPA)")
 
     def run_metrics_loop(self):
 
