@@ -36,3 +36,6 @@ scrape_configs:
     scheme: "https"
     bearer_token_file: tokenSPA.txt
 
+    static_configs:
+      - targets: ["https://spapvdcbrs.palmettovdc.com"]
+
