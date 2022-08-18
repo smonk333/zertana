@@ -86,33 +86,30 @@ class AppMetrics:
 
         #grab ATL alerts json
         metricsATL = requests.get(atlBase+apiUrlBase+'/v1/alerts', headers = {"x-zerto-session": sessionTokenATL}).json()
-        alertsATL = metricsATL.json()
 
         #grab LAS alerts json
         metricsLAS = requests.get(lasBase+apiUrlBase+'/v1/alerts', headers = {"x-zerto-session": sessionTokenLAS}).json()
-        alertsLAS = metricsLAS.json()
 
         #grab SPA alerts json
         metricsSPA = requests.get(spaBase+apiUrlBase+'/v1/alerts', headers = {"x-zerto-session": sessionTokenSPA}).json()
-        alertsSPA = metricsSPA.json()
 
         #update ATL metrics using the .jsons we just pulled
-        self.description_ATL.set(alertsATL["Description"])
-        self.time_ATL.set(alertsATL["TurnedOn"])
-        self.affected_vpg_ATL.set(alertsATL["AffectedVpgs"])
-        self.site_name_ATL.set(alertsATL["Site"])
+        self.description_ATL.set(metricsATL["Description"])
+        self.time_ATL.set(metricsATL["TurnedOn"])
+        self.affected_vpg_ATL.set(metricsATL["AffectedVpgs"])
+        self.site_name_ATL.set(metricsATL["Site"])
 
         #update LAS metrics using the .jsons we just pulled
-        self.description_LAS.set(alertsLAS["Description"])
-        self.time_LAS.set(alertsLAS["TurnedOn"])
-        self.affected_vpg_LAS.set(alertsLAS["AffectedVpgs"])
-        self.site_name_LAS.set(alertsLAS["Site"])
+        self.description_LAS.set(metricsLAS["Description"])
+        self.time_LAS.set(metricsLAS["TurnedOn"])
+        self.affected_vpg_LAS.set(metricsLAS["AffectedVpgs"])
+        self.site_name_LAS.set(metricsLAS["Site"])
 
         #update SPA metrics using the .jsons we just pulled
-        self.description_SPA.set(alertsSPA["Description"])
-        self.time_SPA.set(alertsSPA["TurnedOn"])
-        self.affected_vpg_SPA.set(alertsSPA["AffectedVpgs"])
-        self.site_name_SPA.set(alertsSPA["Site"])
+        self.description_SPA.set(metricsSPA["Description"])
+        self.time_SPA.set(metricsSPA["TurnedOn"])
+        self.affected_vpg_SPA.set(metricsSPA["AffectedVpgs"])
+        self.site_name_SPA.set(metricsSPA["Site"])
 
 def main():
 
